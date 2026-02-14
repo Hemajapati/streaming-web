@@ -1,0 +1,324 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotstar Style Showcase - Professional</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+      <body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <h2 style="color:white; margin-bottom:20px;">Hotstar Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="error" class="error-text"></p>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="nav-list">
+            <li class="nav-item active-nav" onclick="navigateTo('home', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                Home
+            </li>
+            <li class="nav-item" onclick="navigateTo('Cartoon', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                Cartoon
+            </li>
+            <li class="nav-item" onclick="navigateTo('movies', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                Movies
+            </li>
+            <li class="nav-item" onclick="navigateTo('sports', this)">
+                <svg class="nav-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                Sports
+            </li>
+        </ul>
+    </aside>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <button class="menu-btn" onclick="toggleSidebar()">
+                <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <div class="logo-area" onclick="navigateTo('home', document.querySelector('.nav-item'))">
+                <svg class="logo-svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="home-text">Hotstar</span>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="search-bar-wrapper">
+                <input type="text" placeholder="Search for Movies, Shows, Sports...">
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="user-avatar">
+                <img src="https://i.pinimg.com/1200x/3d/65/03/3d650388af374546ea7341abb6d57f00.jpg" alt="User">
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE: HOME -->
+        <div id="home-page" class="page-view active">
+            <!-- Hero Slider (Only on Home) -->
+            <section class="hero-slider">
+                <!-- Slide 1: Salaar -->
+                <div class="hero-slide active">
+                    <img src="https://i.pinimg.com/1200x/81/30/eb/8130eb478f2c15e8f865cc0ddc438e02.jpg">
+                    <div class="hero-content">
+                        <span class="brand-tag">NEW RELEASE</span>
+                        <h1 class="ad-title">Salaar</h1>
+                        <p class="ad-subtitle">A high-octane action thriller.</p>
+                        <!-- VIDEO LINK ADDED -->
+                        <a href="https://youtu.be/7zEqrXp83e0" target="_blank" class="hero-watch-btn">Watch Now</a>
+                    </div>
+                </div>
+                <!-- Slide 2: Jawan -->
+                <div class="hero-slide">
+                    <img src="https://i.pinimg.com/1200x/b5/3c/be/b53cbeef32f72128cb8ded1e136948e9.jpg">
+                    <div class="hero-content">
+                        <span class="brand-tag">HOTSTAR SPECIAL</span>
+                        <h1 class="ad-title">Jawan</h1>
+                        <p class="ad-subtitle">One man. Many identities.</p>
+                        <!-- VIDEO LINK ADDED -->
+                        <a href="https://youtu.be/7zEqrXp83e0" target="_blank" class="hero-watch-btn">Watch Now</a>
+                    </div>
+                </div>
+                <button class="slider-nav prev">❮</button>
+                <button class="slider-nav next">❯</button>
+            </section>
+
+            <section class="content-section">
+                <h3 class="section-title">Recommended for You</h3>
+                <div class="carousel hide-scroll">
+                    <!-- VIDEO LINKS ADDED -->
+                    <div class="card"><img src="https://i.pinimg.com/736x/e2/4f/ba/e24fbad2a0d56c8b3f4d116466354157.jpg"><div class="card-overlay"><a href="https://youtu.be/REPH25hcJvE" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/da/a5/d5/daa5d53adb0d0c0d87059a19adc31823.jpg"><div class="card-overlay"><a href="https://youtu.be/UYWIKDOKeCE" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/0a/a8/36/0aa836a6371e975880b539746f4e0a5e.jpg"><div class="card-overlay"><a href="https://youtu.be/wGpbv2eT0Cw" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/0c/07/fb/0c07fba71c7cb2b754b066e023f8003e.jpg"><div class="card-overlay"><a href="https://youtu.be/Q3peF_ICtkI" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/0d/13/c3/0d13c3e5b3f49a243673c92a4c873fc9.jpg"><div class="card-overlay"><a href="https://youtu.be/_oRB1hymO14" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/7a/80/4b/7a804be4a97361b1ad16aedc0342247c.jpg"><div class="card-overlay"><a href="https://youtu.be/mimoQBL0u5w" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                </div>0
+            </section>
+
+            <section class="content-section">
+                <h3 class="section-title">Movies</h3>
+                <div class="carousel hide-scroll">
+                    <!-- VIDEO LINKS ADDED -->
+                    <div class="card"><img src="https://i.pinimg.com/736x/a6/78/44/a67844fe634ba0b992d80631289ba46b.jpg"><div class="card-overlay"><h4 class="movie-title">Kalki 2898 AD</h4><a href="https://youtu.be/B274eJsC64M" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/f5/3f/96/f53f968d7249fcdf6678dd4fd596e839.jpg"><div class="card-overlay"><h4 class="movie-title">Pushpa 2</h4><a href="https://youtu.be/S4RNGyYgMLA" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/1200x/41/ed/a7/41eda7c343616730d8ee73d2927ea59c.jpg"><div class="card-overlay"><h4 class="movie-title">Devara</h4><a href="https://youtu.be/GK6BMgIdx7g" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/bd/e7/13/bde71347645f32648702a377355e29a1.jpg"><div class="card-overlay"><h4 class="movie-title">Mirai</h4><a href="https://youtu.be/mvJxrGlCSMow" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/7e/29/44/7e2944345a9ec30f2990fa471e696ebb.jpg"><div class="card-overlay"><h4 class="movie-title">Hanuman</h4><a href="https://youtu.be/VKuNHLgrQno" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                </div>
+            </section>
+
+            <!-- NEW CONTAINER ADDED FOR HOME (Requirement: Add one more container) -->
+            
+<!-- NEW CONTAINER ADDED FOR HOME (Requirement: Add one more container) -->
+
+<section class="content-section">
+                <h3 class="section-title">Trending </h3>
+                <div class="carousel hide-scroll">
+                    <div class="card"><img src="https://i.pinimg.com/736x/7e/8f/6c/7e8f6c4c52000f272f2815179e3c6843.jpg">
+                    <div class="card-overlay"><h4 class="movie-title"></h4>
+                    <a href="https://youtu.be/DYLG65xz55U" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/77/6d/9f/776d9fc9c07d140f3566cc0ddaa8a383.jpg">
+                    <div class="card-overlay"><h4 class="movie-title"></h4>
+                    <a href="https://youtu.be/yCkl2Z3PBs0" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/736x/e1/7a/20/e17a20fe5bbb1d1861ae5391ead9084c.jpg">
+                    <div class="card-overlay"><h4 class="movie-title"></h4>
+                    <a href="https://youtu.be/MFKdqXk6XIQ" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/k-ramp-et00453678-1760425723.jpg">
+                    <div class="card-overlay"><h4 class="movie-title"></h4>
+                    <a href="https://youtu.be/3dK_Qs_5Vv8" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card"><img src="https://i.pinimg.com/1200x/bb/76/15/bb7615c48d071515d6c5dba7eaa92520.jpg">
+                    <div class="card-overlay"><h4 class="movie-title"></h4>
+                    <a href="https://youtu.be/bDTUFufX-1s?list=PLyn3ph7Iw4XDCSgXoECkg_ywxlsKZuOco" class="watch-btn">Watch Now</a></div></div>
+                </div>
+            </section>
+        </div>
+        <!-- PAGE: MOVIES (NO HERO SLIDER - DIRECT LIST LIKE 2ND IMAGE) -->
+        <div id="movies-page" class="page-view">
+            <div class="sub-nav-bar">
+                <div class="sub-nav-tab active" data-filter="all">All</div>
+                <div class="sub-nav-tab" data-filter="action">Action</div>
+                <div class="sub-nav-tab" data-filter="drama">Drama</div>
+                <div class="sub-nav-tab" data-filter="thriller">Thriller</div>
+            </div>
+
+            <section class="content-section">
+                <h3 class="section-title">Latest Blockbusters</h3>
+                <div class="carousel hide-scroll">
+                    <!-- VIDEO LINKS ADDED -->
+                    <div class="card" data-category="action"><img src="https://i.pinimg.com/736x/60/f6/43/60f6438d07c414f36db349badab2db9b.jpg"><div class="card-overlay"><h4 class="movie-title">RRR</h4><a href="https://youtu.be/A8BC9fCTD94" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="action"><img src="https://i.pinimg.com/736x/f5/3f/96/f53f968d7249fcdf6678dd4fd596e839.jpg"><div class="card-overlay"><h4 class="movie-title">Pushpa 2</h4><a href="https://youtu.be/S4RNGyYgMLA" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="action"><img src="https://i.pinimg.com/1200x/41/ed/a7/41eda7c343616730d8ee73d2927ea59c.jpg"><div class="card-overlay"><h4 class="movie-title">Devara</h4><a href="https://youtu.be/GK6BMgIdx7g" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="drama"><img src="https://i.pinimg.com/736x/bd/e7/13/bde71347645f32648702a377355e29a1.jpg"><div class="card-overlay"><h4 class="movie-title">Mirai</h4><a href="https://youtu.be/mvJxrGlCSMow" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="thriller"><img src="https://i.pinimg.com/736x/95/f5/13/95f5130ab1cc5a9aee45ac7f2dc370ce.jpg"><div class="card-overlay"><h4 class="movie-title">Kalki</h4><a href="https://youtu.be/B274eJsC64M" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3 class="section-title">Trending Now</h3>
+                <div class="carousel hide-scroll">
+                    <div class="card" data-category="action">
+                        <img src="https://i.pinimg.com/736x/e1/7a/20/e17a20fe5bbb1d1861ae5391ead9084c.jpg">
+                    <div class="card-overlay">Mahavatar Narsimha<h4 class="movie-title"></h4><a href="https://youtu.be/npIGcvc1y7o" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="drama">
+                        <img src="https://i.pinimg.com/736x/77/6d/9f/776d9fc9c07d140f3566cc0ddaa8a383.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Sankarnthiki vasthunam</h4><a href="https://youtu.be/yCkl2Z3PBs0" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="action">
+                        <img src="https://i.pinimg.com/736x/7e/8f/6c/7e8f6c4c52000f272f2815179e3c6843.jpg">
+                    <div class="card-overlay">gunturu karm<h4 class="movie-title">
+
+                    </h4><a href="https://youtu.be/npIGcvc1y7o" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="drama"><img src="https://i.pinimg.com/736x/77/6d/9f/776d9fc9c07d140f3566cc0ddaa8a383.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Sankarnthiki vasthunam</h4><a href="https://youtu.be/yCkl2Z3PBs0" class="watch-btn">Watch Now</a></div></div>
+                </div>    
+            </section>
+        </div>
+
+        <!-- PAGE: CARTOON (NO HERO SLIDER) -->
+        <div id="Cartoon-page" class="page-view">
+            <div class="sub-nav-bar">
+                <div class="sub-nav-tab active" data-filter="all">All</div>
+                <div class="sub-nav-tab" data-filter="anime">Anime</div>
+                <div class="sub-nav-tab" data-filter="disney">Disney</div>
+            </div>
+
+            <section class="content-section">
+                <h3 class="section-title">Popular Cartoons</h3>
+                <div class="carousel hide-scroll">
+                    <!-- VIDEO LINKS ADDED -->
+                    <div class="card" data-category="anime">
+                    <img src="https://i.pinimg.com/736x/d2/54/c3/d254c3623f2885ef0fb39f24fdeaba26.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Doraemon</h4>
+                    <a href="https://youtu.be/mimoQBL0u5w" target="_blank" class="watch-btn">Watch Now
+                     </a></div></div>
+                    <div class="card" data-category="anime">
+                    <img src="https://i.pinimg.com/736x/f8/6f/8f/f86f8f3c99038c888f23ed8b411cc0f6.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Shinchan</h4>
+                    <a href="https://youtu.be/-iya9O9soIQ" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="disney">
+                    <img src="https://i.pinimg.com/1200x/1f/7a/d1/1f7ad16dcd82fb1ba3e0fb3d071d79bc.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Tom & Jerry</h4>
+                        <a href="https://youtu.be/cWXDYpiu6F4" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="anime">
+                    <img src="https://i.pinimg.com/736x/8a/10/9d/8a109de9e29b25828f7b3b63163a8a36.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Pokemon</h4>
+                    <a href="https://youtu.be/l6VmWSCShv4" target="_blank" class="watch-btn">Watch Now</a></div></div>
+                </div>
+            </section>
+
+            <!-- NEW CONTAINER ADDED FOR CARTOON (Requirement: Make 2 containers) -->
+            <section class="content-section">
+                <h3 class="section-title">Disney & Pixar Favorites</h3>
+                <div class="carousel hide-scroll">
+                    <div class="card" data-category="disney">
+                        <img src="https://i.pinimg.com/736x/13/8b/5f/138b5f86b7a2872fa124005b18c24650.jpg">
+                        <div class="card-overlay"><h4 class="movie-title">Frozen</h4>
+                            <a href="https://youtu.be/X_3v_2dMM_4?list=RDX_3v_2dMM_4" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="disney">
+                        <img src="https://i.pinimg.com/736x/c3/f2/a7/c3f2a78852c99b9d8f4dbd5d1097b52e.jpg"><div class="card-overlay">
+                    <h4 class="movie-title">Lion King</h4>
+                    <a href="https://youtu.be/Ow0b1SwZN3I?list=PLmG0rvs_erePy0s3Jul2mZ3ah4pzmTvAV" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="anime">
+                    <img src="https://i.pinimg.com/736x/b0/98/ad/b098ad7640e4a05025c46bbe30c5f65b.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Spirited Away</h4>
+                        <a href="https://youtu.be/T7EY-OGtaGA" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="disney">
+                        <img src="https://i.pinimg.com/736x/99/f2/44/99f24475cf40003077499915028833a7.jpg"><div class="card-overlay">
+                            <h4 class="movie-title">Moana</h4>
+                            <a href="https://youtu.be/LKFuXETZUsI" class="watch-btn">Watch Now</a></div></div>
+                    <div class="card" data-category="disney">
+                        <img src="https://i.pinimg.com/1200x/83/f7/4a/83f74ae714a4d58543f7630180df465d.jpg"><div class="card-overlay">
+                            <h4 class="movie-title">Coco</h4><a href="https://youtu.be/yg8116aeD7E?list=PLVJ7larIvfrEgqm0mkrE7Kxxfr6XPxqXL" class="watch-btn">Watch Now</a></div></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE: SPORTS (NO HERO SLIDER) -->
+        <div id="sports-page" class="page-view">
+            <div class="sub-nav-bar">
+                <div class="sub-nav-tab active" data-filter="all">Cricket</div>
+                <div class="sub-nav-tab" data-filter="football">Football</div>
+                <div class="sub-nav-tab" data-filter="kabaddi">Kabaddi</div>
+            </div>
+
+            <section class="content-section">
+                <h3 class="section-title">Top Sports Events</h3>
+                <div class="carousel hide-scroll">
+                    <!-- VIDEO LINKS ADDED -->
+                    <div class="card" data-category="cricket"><img src="https://i.pinimg.com/1200x/19/ba/6b/19ba6b019c0d0e33c0e0b5930c8831ab.jpg"><div class="card-overlay"><h4 class="movie-title">IPL 2026</h4><a href="https://youtu.be/-85dXnsxXxQ" target="_blank" class="watch-btn">Watch Highlights</a></div></div>
+                    <div class="card" data-category="football"><img src="https://i.pinimg.com/736x/80/51/92/8051926cc9787d27978714d4767665d1.jpg"><div class="card-overlay"><h4 class="movie-title">FIFA World Cup</h4><a href="https://youtu.be/Ar4LrKcwh3w" target="_blank" class="watch-btn">Watch Highlights</a></div></div>
+                    <div class="card" data-category="kabaddi"><img src="https://i.pinimg.com/736x/24/ef/0a/24ef0a97b19f9bf55217d7e60f46d998.jpg"><div class="card-overlay"><h4 class="movie-title">Pro Kabaddi</h4><a href="https://youtu.be/ZtS8Yc0ah7c" target="_blank" class="watch-btn">Watch Highlights</a></div></div>
+                    <div class="card" data-category="football"><img src="https://i.pinimg.com/1200x/14/53/68/1453684a79abcdeeca66f572e1d9dbaa.jpg"><div class="card-overlay"><h4 class="movie-title">Wimbledon</h4><a href="https://youtu.be/eRbTHj2KLro" target="_blank" class="watch-btn">Watch Highlights</a></div></div>
+                </div>
+            </section>
+
+            <!-- NEW CONTAINER ADDED FOR SPORTS (Requirement: Make 2 containers) -->
+            <section class="content-section">
+                <h3 class="section-title">Upcoming Live Events</h3>
+                <div class="carousel hide-scroll">
+                    <div class="card" data-category="cricket">
+                    <img src="https://i.pinimg.com/736x/99/01/1e/99011e8ba6abedb4b116a6944f75a8fd.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">India vs Aus</h4>
+                    <a href="https://youtu.be/DPh5YYbbKGU" class="watch-btn">Watch Live</a></div></div>
+                    <div class="card" data-category="football">
+                    <img src="https://i.pinimg.com/736x/b9/30/9a/b9309a1b4d6987f08a8e7040908ddc01.jpg">
+                    <div class="card-overlay"><h4 class="movie-title">Premier League</h4>
+                        <a href="https://youtu.be/Aw_OVfYOPMw" class="watch-btn">Watch Live</a></div></div>
+                    <div class="card" data-category="kabaddi">
+                        <img src="https://i.pinimg.com/736x/5e/81/ba/5e81ba36a18574e5b79ad26b25ed37f9.jpg">
+                        <div class="card-overlay"><h4 class="movie-title">Semis Final</h4>
+                            <a href="https://youtu.be/ojnVJ4y-Xm0" class="watch-btn">Watch Live</a></div></div>
+                    <div class="card" data-category="football">
+                        <img src="https://i.pinimg.com/736x/a0/ef/19/a0ef1910f3ca8d94544e67ae24be1a42.jpg">
+                        <div class="card-overlay"><h4 class="movie-title">La Liga</h4>
+                            <a href="https://youtu.be/Sy6emSOKlQY" class="watch-btn">Watch Live</a></div></div>
+                    <div class="card" data-category="cricket">
+                        <img src="https://i.pinimg.com/736x/87/da/ff/87daff33555b6e1dedbdcbf55b7ca0aa.jpg">
+                        <div class="card-overlay"><h4 class="movie-title">T20 Blast</h4>
+                            <a href="https://youtu.be/-aPONfxjk_4" class="watch-btn">Watch Live</a></div></div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-column">
+                <h4>Need Help?</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h4>Connect with Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 STAR. All Rights Reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
